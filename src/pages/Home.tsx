@@ -1,21 +1,24 @@
-import React from "react";
+
 
 import { useGetProductsQuery } from "../redux/queries/ProductApi";
+import { Link } from "react-router-dom";
 
 const ProductCart = ({
   title,
   image,
   price,
-  category
+  category,
+  id,
 }: {
   title: string;
   image: string;
   category: string;
   price: number;
+  id:number;
 }) => {
 
   return (
-    <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+    <Link to={`/product/${id}`} className="lg:w-1/4 md:w-1/2 p-4 w-full">
       <a className="block relative h-48 rounded overflow-hidden">
         <img
           alt="ecommerce"
@@ -39,7 +42,7 @@ const ProductCart = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -57,6 +60,7 @@ const Home = () => {
             {products.length > 1 && products.map((product:any) => (
               <ProductCart
                 key={product.id}
+                id={product.id}
                 title={product.title}
                 image={product.image}
                 price={product.price}
