@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import Sidebar from "./Sidebar/index";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 

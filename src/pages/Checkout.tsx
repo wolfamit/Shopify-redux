@@ -1,6 +1,7 @@
 import { FaLock } from "react-icons/fa";
 import { AiOutlineSafety } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const Checkout = () => {
   const navigate = useNavigate();
   const handlecheckout = () => {

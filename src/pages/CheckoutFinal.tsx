@@ -1,5 +1,3 @@
-import React from "react";
-
 const CheckoutFinal = () => {
   return (
     <>
@@ -33,11 +31,11 @@ const CheckoutFinal = () => {
                       <td className="py-4">$19.99</td>
                       <td className="py-4">
                         <div className="flex items-center">
-                          <button className="border rounded-md py-2 px-4 mr-2">
+                          <button type="submit" className="border rounded-md py-2 px-4 mr-2">
                             -
                           </button>
                           <span className="text-center w-8">1</span>
-                          <button className="border rounded-md py-2 px-4 ml-2">
+                          <button type="submit" className="border rounded-md py-2 px-4 ml-2">
                             +
                           </button>
                         </div>
@@ -68,7 +66,7 @@ const CheckoutFinal = () => {
                   <span className="font-semibold">Total</span>
                   <span className="font-semibold">$21.98</span>
                 </div>
-                <button className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
+                <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
                   Checkout
                 </button>
               </div>
