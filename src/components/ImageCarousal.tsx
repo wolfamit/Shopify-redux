@@ -14,7 +14,7 @@ const ImageCarousal = () => {
   const [index, setIndex] = useState(0);
   //   let ref = useRef();
   
-  const ref = useRef(Number);
+  const ref = useRef(null);
   
 
   const handleNext = () => {
