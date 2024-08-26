@@ -39,7 +39,7 @@ const Header = () => {
             <CiShoppingCart className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" />
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
 
-            <span className="ml-3 text-xl">Shopify</span>
+            <span className="ml-4 text-3xl">CloudCart</span>
           </Link>
           <nav className="md:ml-auto md:py-1 md:pl-4	flex flex-wrap items-center text-base justify-center">
             <Link to={"/"} className="mr-5 hover:text-gray-900">
