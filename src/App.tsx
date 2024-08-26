@@ -8,6 +8,7 @@ import SingleItem from "./pages/SingleItem";
 import CheckoutFinal from "./pages/CheckoutFinal";
 
 import "react-loading-skeleton/dist/skeleton.css";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/product/:id" Component={SingleItem} />
           </Routes>
         </BrowserRouter>
+        <Footer />
 
     </>
   );

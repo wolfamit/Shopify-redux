@@ -1,7 +1,7 @@
 import ImageCarousal from "../components/ImageCarousal";
 import { useGetProductsQuery } from "../redux/queries/ProductApi";
 import { Link } from "react-router-dom";
-import Skeleton from 'react-loading-skeleton'
+
 
 const ProductCart = ({
   title,
