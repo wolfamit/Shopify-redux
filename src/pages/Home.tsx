@@ -1,4 +1,5 @@
 import ImageCarousal from "../components/ImageCarousal";
+
 import { useGetProductsQuery } from "../redux/queries/ProductApi";
 import { Link } from "react-router-dom";
 
@@ -59,6 +60,7 @@ const Home = () => {
 
   return (
     <div>
+      
       <ImageCarousal />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">

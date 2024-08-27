@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const CartItem = ({ state: { isSidebarOpen, setIsSidebar } }: any) => {
   const state = useSelector((state: any) => state.CartSlice.cart);
-
+  
   return (
     <div className="relative" onClick={() => setIsSidebar(!isSidebarOpen)}>
       <IoCartOutline className="text-5xl"></IoCartOutline>
@@ -26,11 +26,26 @@ const CartItem = ({ state: { isSidebarOpen, setIsSidebar } }: any) => {
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebar] = useState(false);
+   // Assuming you have the user's mobile number stored in the Redux store
+   const mobileNumber = localStorage.getItem('userMobile');
+   const User = localStorage.getItem('userName');
+ 
+   // Function to generate a session ID using the user's mobile number
+   const generateSessionId = (mobile: string | null): string => {
+     if (!mobile) {
+       return "SID-0000-0000"; // Fallback session ID if mobile number is null
+     }
+     const prefix = "SID";
+     const suffix = new Date().getTime().toString().slice(-4);
+     return `${prefix}-${mobile.slice(-4)}-${suffix}`;
+   };
+ 
+   const sessionId = generateSessionId(mobileNumber);
 
   return (
     <>
       <ToastContainer />
-      <header className="w-full shadow-md fixed z-50 bg-white">
+      <header className="w-full top-0 shadow-md fixed z-50 bg-white">
         <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
           <Link
             to={"/"}
@@ -41,6 +56,12 @@ const Header = () => {
 
             <span className="ml-4 text-3xl">CloudCart</span>
           </Link>
+
+          {/* Displaying the session ID in the middle of the header */}
+          <div className="flex-grow text-center">
+            <span className="text-sml font-bold">Hello {User}! Session ID: {sessionId}✅</span>
+          </div>
+
           <nav className="md:ml-auto md:py-1 md:pl-4	flex flex-wrap items-center text-base justify-center">
             <Link to={"/"} className="mr-5 hover:text-gray-900">
               Home
@@ -56,6 +77,7 @@ const Header = () => {
         </div>
         <Sidebar state={{ isSidebarOpen, setIsSidebar }} />
       </header>
+      
     </>
   );
 };

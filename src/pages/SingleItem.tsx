@@ -43,12 +43,12 @@ const SingleItem = () => {
 
   return (
     <>
-      <section className="text-gray-600 body-font overflow-hidden">
+      <section className="text-gray-600 body-font overflow-hidden lg:mt-2 mt-9">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
       
               <InnerImageZoom 
-                className="lg:w-1/2 w-full lg:h-auto h-56 object-cover object-center rounded"
+                className="lg:w-1/2 w-full lg:h-auto h-[100%] lg:p-3 p-7 object-cover object-center rounded"
                 src={data?.image}
               />
             
@@ -64,7 +64,6 @@ const SingleItem = () => {
                   rating={data.rating.rate}
                   starRatedColor="blue"
                   // changeRating={changeRating}
-
                   numberOfStars={5}
                   name="rating"
                   starSpacing="0"
