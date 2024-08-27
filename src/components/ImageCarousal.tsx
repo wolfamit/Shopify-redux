@@ -52,9 +52,9 @@ const ImageCarousal = () => {
         ref.current = window.setInterval(handleNext, 3000);
       }}
       
-      className="w-full md:w-4/5 ">
+      className="w-full md:ml-28 md:w-4/5 shadow-2xl pb-8">
         <Link to={`/product/${products[index].id}`}><img
-          className="md:pt-20 pt-32 cursor-pointer mx-auto relative h-[400px] w-1/2"
+          className="md:pt-20 pt-48 cursor-pointer mx-auto relative h-[400px] w-1/2 "
           src={products[index]?.image}
           alt={products[index]?.description || "Product Image"}
         /></Link>
