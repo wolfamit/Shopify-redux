@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const navigate = useNavigate();
+  
   const handlecheckout = () => {
     navigate('/checkout-final')
   }

@@ -10,7 +10,7 @@ import {
   decrementReducer,
   deleteReducer,
 } from "../../redux/slice/Cart.Slice";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 
 const CartCard = ({ c }: any) => {
