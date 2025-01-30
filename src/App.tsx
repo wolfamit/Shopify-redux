@@ -16,23 +16,7 @@ import axios from "axios";
 
 function App() {
   const [isUserModalOpen, setIsUserModalOpen] = useState(false);
-  const [cartId, setCartId] = useState();
-  
-  useEffect(() => {
-    // Fetch the cart_id from the backend when the component mounts
-    const fetchCartId = async () => {
-        try {
-            const response = await axios.get('https://cloudcart.vercel.app/cart');
-            setCartId(response.data.cart_id);
-        } catch (error) {
-            console.error('Error fetching cart ID:', error);
-        }
-    };
-
-    console.log('cartId:', cartId);
-
-    fetchCartId();
-}, []);
+ 
 
   useEffect(() => {
     const userName = localStorage.getItem("userName");
@@ -47,6 +31,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
+        
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/checkout" Component={Checkout} />

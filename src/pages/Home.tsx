@@ -1,7 +1,27 @@
+import { useEffect, useState } from "react";
 import ImageCarousal from "../components/ImageCarousal";
 
 import { useGetProductsQuery } from "../redux/queries/ProductApi";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+const [cartId, setCartId] = useState(0);
+  
+useEffect(() => {
+  // Fetch the cart_id from the backend when the component mounts
+  const fetchCartId = async () => {
+      try {
+          const response = await axios.get('https://cloudcart.vercel.app/cart');
+          setCartId(response.data.cart_id);
+      } catch (error) {
+          console.error('Error fetching cart ID:', error);
+      }
+  };
+
+  console.log('cartId:', cartId);
+
+  fetchCartId();
+}, []);
 
 
 const ProductCart = ({
@@ -62,6 +82,7 @@ const Home = () => {
     <div>
       
       <ImageCarousal />
+      <div>{cartId}</div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
