@@ -8,15 +8,16 @@ import {
 } from "react-icons/fa"; // Payment Icons
 import Header from "../components/Header";
 import VirtualCart from "./VirtualCart";
-import { useState } from "react";
+
 
 const Dashboard = () => {
   // Extract cart ID from URL params
   const { id } = useParams<{ id?: string }>();
-  const [isScanning, setIsScanning] = useState(true);
+  const isScanning = true
   const navigate = useNavigate();
   console.log("Cart ID:", id);
 
+  
   return (
     <>
       <Header />
