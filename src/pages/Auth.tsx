@@ -4,8 +4,7 @@ import { toast } from "react-toastify";
 
 const Auth = () => {
   const navigate = useNavigate();
-  const { id } = useParams(); // From URL params (e.g., /auth/:cart_id)
- 
+  const id = 123456789
   
   const [formData, setFormData] = useState({
     cartID: id, // Initially empty
